@@ -1,0 +1,59 @@
+<div class="home search-results"
+        infiniteScroll
+        [infiniteScrollThrottle]="50"
+        [infiniteScrollDistance]="0"
+        (scrolled)="onScroll()">
+        <div class="filters">
+
+    
+    <!-- <mat-form-field> -->
+    <div class="sort">
+        <label>Sort By: </label>
+        <select class="select" [(ngModel)] = "sort" (change) = "changeSort(sort,mypage)">
+        <option value='' default>Choose one</option>
+        <option value='name'>Name</option>
+        <option value='released'>Released</option>
+        <option value='added'>Added</option>
+        <option value='created'>Created</option>
+        <option value='updated'>Updated</option>
+        <option value='rating'>Rating</option>
+        <option value='metacritic'>Metacritic</option>
+        </select>
+
+    </div>
+    <!-- </mat-form-field> -->
+</div>
+
+<div class="games">
+    <ng-container *ngFor="let game of games">
+    
+    <div class="game" (click)="gameDetails(game.id)">
+        <div class="game-thumb-container">
+            <img
+            *ngIf="game.background_image" 
+            src="{{game.background_image}}" alt="thumbnail"  class="game-thumbnail"/>
+            <p *ngIf="!game.background_image"> No Image</p>
+
+        </div>
+        <div class="game-description">
+        <div class="game-plateforms">
+            <img 
+            *ngFor="let gameplatform of game.parent_platforms"
+            src="assets/images/platforms/{{gameplatform.platform.slug}}.svg" alt="" class="game-platform">
+            
+        </div>
+        <p class="game-name">{{game.name}}</p>
+
+    </div>
+
+    </div>
+</ng-container>
+
+<!-- <div class="load-more__button" role="button" tabindex="0">Load more</div> -->
+</div>
+<div class="load_more">
+    <button class="load_more_button"><span class="label">Loading..</span> <span class="svgimg"><img class="loader" src="../../../assets/images/loader.svg" alt=""></span></button>
+    <!-- <object src="../../../assets/images/loader.svg"></object> -->
+
+</div>
+</div>

@@ -1,0 +1,213 @@
+.home{
+        max-width: 100%;
+        // display: flex;
+        margin: 0 auto;
+        // margin-top: 90px;
+    // background-color: darkorange;
+        // justify-content: center;
+        padding: 0px 5vw;
+}
+
+.filters {
+    max-width: 180px;
+    
+}
+
+.sort {
+    background-color: #262626;
+    padding: 5px 10px;
+    border: none;
+    border-radius: 3px;
+
+    label {
+        opacity: .5;
+    }
+
+}
+
+.select {
+    background-color: #262626;
+    outline: none;
+    border: none;
+    color: #fff;
+    font-weight: bold;
+    width: 100px;
+}
+
+// option {
+    // background-color: #fff;
+    // width: 150px;
+    // color: royalblue;
+// }
+
+.games {
+    display: inline-grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: auto;
+    column-gap: 15px;
+    // flex-wrap: wrap;
+    justify-content: center;
+    max-width: 1200px;
+    padding: 40px auto;
+
+    // background-color: rosybrown;
+}
+
+.game {
+    width: auto;
+    margin: 10px;
+    height: auto;
+    border-radius: 10px;
+    overflow: hidden;
+    background-color: #262626;
+    // background-color: rosybrown;
+    transition-duration: 0.3s;
+    cursor: pointer;
+    // box-shadow: 4px 3px 8px 0px rgb(200 152 444);
+
+    &:hover {
+    // box-shadow: 4px 3px 11px 0px rgb(200 152 444);
+    transform: scale(1.05);
+    }
+
+    &-thumb-container{
+        background-color: #000;
+        position: relative;
+        height: 172px;
+        color: #fff;
+        text-align: center;
+
+    }
+
+    &-thumbnail {
+        width: 280px;
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        margin: 0 auto;
+        height: 172px;
+
+    }
+    &-description {
+        top: 0;
+        padding: 16px;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        height: auto;
+    }
+
+    &-name{
+        color: #fff;
+        font-weight: 700;
+        font-size: 20px;
+        margin-top: 20px;
+        white-space: nowrap;
+        text-overflow: ellipsis;
+        overflow: hidden;
+    }
+
+    &-platforms{
+        display: flex;
+    }
+
+    &-platform{
+    
+    width: 14px;
+    margin-right: 8px;
+    }   
+
+   
+    .load-more__button {
+        -webkit-tap-highlight-color: transparent;
+        font-family: -apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen,Ubuntu,Cantarell,Open Sans,Helvetica Neue,sans-serif;
+        letter-spacing: 0;
+        text-rendering: optimizeLegibility;
+        -webkit-font-smoothing: antialiased;
+        -webkit-box-direction: normal;
+        line-height: normal;
+        display: flex;
+        -webkit-box-flex: 0;
+        flex: 0 1 auto;
+        -webkit-box-align: center;
+        align-items: center;
+        -webkit-box-pack: center;
+        background-color: hsla(0,0%,100%,.1);
+        color: hsla(0,0%,100%,.4);
+        border-radius: 4px;
+        transition: all .3s;
+    }
+}
+
+
+.load_more {
+    // background: chartreuse;
+    text-align: center;
+    width: 90vw;
+    padding: 50px;
+    display: grid;
+    
+    &_button {
+        // position: absolute;
+        display: inline-grid;
+        grid-template-columns: 60% 40%;
+        // width: 150px;
+        cursor: pointer;
+        color: #ffffff66;
+        background-color: #ffffff1a;
+        font-size: 16px;
+        border-radius: 5px;
+        outline: none;    
+        border: none;
+        font-weight: 400;
+        width: 200px;
+        height: 48px;
+        margin: auto;
+        // margin-left: 40%;
+
+    
+    }
+    .label{
+        text-align: right;
+        // background-color: khaki;
+        // float: right;
+        margin-right: 5px;
+        margin-top: 14px;
+    }
+    .svgimg {
+        float: left;
+        padding-top: 3px;
+    }
+    .loader{
+        float: left;
+        width: 40px;
+    }
+}
+// ::ng-deep {
+//     .mat-form-field-infix{
+//         background-color: darkorange;
+        
+//     }
+//     .mat-select-value,
+//     .mat-select-arrow,
+//     .mat-form-field-hide-placeholder .mat-select-placeholder,
+//     .mat-form-field-appearance-legecy .mat-form-field-label {
+//         color: red !important;
+//         opacity: 1;
+//     }
+//     .mat-form-field-infix{
+//         border-color: white !important;
+//         border-top: none;
+//         padding-left: 5px !important;
+//     }
+//     .mat-form-field-appearance-legecy .mat-form-field-label {
+//     padding-left: 5px;
+//     }
+//     .mat-form-field-appearance-legecy .mat-form-field-underline {
+//         background-color: red !important;
+//     }
+
+
+
+// }

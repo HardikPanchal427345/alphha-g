@@ -1,0 +1,179 @@
+<div class="container">
+    <div class="details">
+        <div class="game-banner">
+            <img class="game-banner-img" src="{{ game.background_image }}" alt="">
+        </div>
+
+        <div>
+            <div class="game-head-meta">
+                <div class="game-meta-date">{{ game.released | date}}</div>
+                <div class="game-plateforms">
+                    <img *ngFor="let gameplatform of game.parent_platforms"
+                        src="assets/images/platforms/{{gameplatform.platform.slug}}.svg" alt="" class="game-platform">
+
+                </div>
+                <div class="game-meta-playtime">Average Playtime: {{game.playtime}} hours</div>
+            </div>
+
+
+
+
+            <div class="game-content">
+                <div class="details-wrapper">
+                    <div class="game-header">
+                        <h1 class="game-header-title">{{ game.name }}</h1>
+                        <p class="game-header-genres">
+                            <span></span>
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="rating-chart">
+                <div class="rating-chart__chart rating-chart__chart_rating">
+                    <div class="rating rating_text rating_exceptional rating-chart__rating" title="exceptional"
+                        role="button" tabindex="0">
+                        <div class="rating__icon rating__icon_exceptional"></div>
+
+                        <div class="rating__text">{{ game.ratings[maxid].title | titlecase }}</div>
+                    </div>
+                    <div class="rating-chart__bottom"><a class="rating-chart__bottom-link">{{ game.ratings_count }}
+                            ratings</a></div>
+                </div>
+                <div class="rating-chart__chart">
+                    <div class="rating-chart__number"><span class="rating-chart__number-icon">#</span>1</div>
+                    <div class="rating-chart__bottom"><a class="rating-chart__bottom-link"
+                            href="/games/action">Action</a>
+                    </div>
+                </div>
+                <div class="rating-chart__chart">
+                    <div class="rating-chart__number"><span class="rating-chart__number-icon">#</span>1</div>
+                    <div class="rating-chart__bottom"><a class="rating-chart__bottom-link" href="/games/2013">Top
+                            2013</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="buttons">
+                <a class="ratings-review-button" rel="nofollow"
+                    href="/reviews/create?game=%7B%22id%22%3A3498%2C%22name%22%3A%22Grand%20Theft%20Auto%20V%22%2C%22slug%22%3A%22grand-theft-auto-v%22%7D&amp;redirect=true">
+                    <span class="SVGInline game__ratings-review-button__icon"><svg class="button-icon-svg"
+                            xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20">
+                            <path fill-rule="evenodd"
+                                d="M8.714 11.286H2.286a1.286 1.286 0 010-2.572h6.428V2.286a1.286 1.286 0 012.572 0v6.428h6.428a1.286 1.286 0 010 2.572h-6.428v6.428a1.286 1.286 0 01-2.572 0v-6.428z">
+                            </path>
+                        </svg>
+                    </span>
+                    Write a review 5031</a>
+
+                <a class="ratings-review-button" rel="nofollow"
+                    href="/posts/create?game=%7B%22id%22%3A3498%2C%22name%22%3A%22Grand%20Theft%20Auto%20V%22%2C%22slug%22%3A%22grand-theft-auto-v%22%7D">
+                    <span class="SVGInline game__ratings-review-button__icon"><svg class="button-icon-svg"
+                            xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20">
+                            <path fill="#FFF" fill-opacity=".5" fill-rule="evenodd"
+                                d="M10 2.807c-3.984 0-7.225 2.93-7.225 6.531 0 3.602 3.24 6.531 7.225 6.531h.367l.26.265c.882.898 3.203 1.131 4.482 1.046l-1.492-2.135.754-.518c.096-.066.191-.135.284-.207 1.634-1.248 2.57-3.063 2.57-4.982 0-3.602-3.24-6.531-7.225-6.531M14.471 19c-1.598 0-3.61-.358-4.813-1.33C4.854 17.503 1 13.83 1 9.338 1 4.741 5.037 1 10 1s9 3.741 9 8.338c0 2.342-1.055 4.55-2.91 6.13l1.287 1.843v.288c0 .229-.08.795-.831 1.11-.422.18-1.185.291-2.075.291">
+                            </path>
+                        </svg>
+                    </span>
+                    Write a comment</a>
+            </div>
+
+            <div class="about-game">
+                <h2>About</h2>
+                <p>
+                    {{ game.description_raw}} </p>
+            </div>
+
+
+            <div class="meta-about">
+                <div class="platforms">
+                    <h4>Platforms</h4>
+                    <p *ngFor="let game of game.parent_platforms, let last = last">
+                        {{ game.platform.name }}<span *ngIf="!last"> ,</span>
+                    </p>
+                </div>
+                <div class="metascore">
+                    <h4>Metascore</h4>
+                    <p class="metascore-p">{{ game.metacritic }}</p>
+
+                </div>
+                <div class="genre">
+                    <h4>Genre</h4>
+                    <p *ngFor="let game of game.genres, let last = last">
+                        {{ game.name }}<span *ngIf="!last"> ,</span>
+                    </p>
+
+                </div>
+                <div class="rel_date">
+                    <h4>Released Date</h4>
+                    <p>{{ game.released | date}}</p>
+                </div>
+                <div class="developer">
+                    <h4>Developer</h4>
+                    <p *ngFor="let game of game.developers, let last = last">
+                        {{ game.name }}<span *ngIf="!last"> ,</span>
+                    </p>
+
+                </div>
+                <div class="publisher">
+                    <h4>Publisher</h4>
+                    <p *ngFor="let game of game.publishers, let last = last">
+                        {{ game.name }}<span *ngIf="!last"> ,</span>
+                    </p>
+
+                </div>
+                <div class="app-rating">
+                    <h4>App Rating</h4>
+                    <p>{{ game.esrb_rating.name}}</p>
+
+                </div>
+                <div class="site">
+                    <h4>Official Website</h4>
+                    <a href="{{ game.website}}">{{ game.website}}</a>
+                    <p></p>
+                </div>
+            </div>
+
+        </div>
+        <div class="right-side">
+            <div class="screens">
+                <div *ngFor="let item of game.screenshots, let i = index">
+                    <section *ngIf=" i < 5">
+                        <img src="{{ item.image }}" alt="">
+                    </section>
+                </div>
+                <button class="viewdiv">
+                    View All
+                </button>
+            </div>
+            <h2 class="store-title">Where to buy</h2>
+            <div class="buy-platforms">
+                <a href="http://{{ game.store.domain }}" *ngFor="let game of game.stores">
+                    <div class="buy-platform">
+                        <p class="buy-platform-name"> {{ game.store.name}}</p>
+                        <span><img src="../../../assets/images/stores/{{ game.store.slug }}.svg"
+                                class="buy-platform-logo"></span>
+                    </div>
+                </a>
+            </div>
+        </div>
+
+
+    </div>
+    <h1 class="trailer-header">Trailers</h1>
+    <div class="trailers" >
+
+        <!-- <video [muted] loop="" controls="" width="640" height="480">
+        <source type="video/mp4" src="{{ trailer.data.max }}">
+        </video> -->
+        <div class="video_content" *ngFor="let trailer of game.trailers">
+            <video  controls loop onmouseover="this.play()" onmouseout="this.pause();" poster="{{ trailer.preview }}">
+            <source src="{{ trailer.data.max}}">
+      </video>
+            <!-- <div class="one"> CONTENT OVER VIDEO
+        <video class="video-background" no-controls autoplay src="{{ trailer.data.max }}" poster="{{ trailer.data.preview}}"></video>
+    </div> -->
+
+        </div>
+    </div>
+</div>

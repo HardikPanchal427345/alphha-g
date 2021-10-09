@@ -1,0 +1,12 @@
+<div class="search-container">
+    <div class="logo" routerLink= "/"> ALPHA-G </div>
+    <form  class="search-form" #form = 'ngForm' (ngSubmit) = "onSubmit(form)">
+        <input type="text"
+        class="search-input"
+        name="search"
+        ngModel
+        placeholder="Search 500,000+ Games"
+        />
+        <button type="submit" class="search-button">Search</button>
+    </form>
+</div> 
